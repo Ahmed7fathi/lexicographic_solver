@@ -1,6 +1,9 @@
 import random
 from time import sleep
-word = 'abc'
+
+word = input("Enter a word: ")
+p = [word]
+
 
 def fact(n):
     if n <= 0:
@@ -17,14 +20,10 @@ sleep(2)
 
 
 
-p = []
-p.append(word)
 
 while len(p) < f:
-    r = ''.join([random.choice(word) for i2 in range(3)])
-    if r in p:
-        pass
-    else:
+    r = ''.join([random.choice(word) for i in range(len(word))])
+    if r not in p:
         print("[+] Found : [{}]".format(r))
         p.append(r)
 
